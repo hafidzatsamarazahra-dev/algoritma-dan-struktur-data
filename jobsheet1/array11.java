@@ -9,81 +9,53 @@ public class array11 {
         System.out.println(" Program Menghitung IP Semester");
         System.out.println("===============================");
 
-        System.out.print("Masukkan nilai angka untuk MK Pancasila: ");
-        double pancasila = sc.nextDouble();
-        System.out.print("Masukkan nilai angka untuk MK Konsep Teknologi Informasi: ");
-        double kti = sc.nextDouble();
-        System.out.print("Masukkan nilai angka untuk MK Critical Thinking dan Problem Solving: ");
-        double ctps = sc.nextDouble();
-        System.out.print("Masukkan nilai angka untuk MK Matematika Dasar: ");
-        double mtk = sc.nextDouble();
-        System.out.print("Masukkan nilai angka untuk MK Bahasa Inggris: ");
-        double ing = sc.nextDouble();
-        System.out.print("Masukkan nilai angka untuk MK Dasar Pemrograman: ");
-        double daspro = sc.nextDouble();
-        System.out.print("Masukkan nilai angka untuk MK Praktikum Dasar Pemrograman: ");
-        double prakdaspro = sc.nextDouble();
-        System.out.print("Masukkan nilai angka untuk MK Keselamatan dan Kesehatan Kerja: ");
-        double k3 = sc.nextDouble();
+        System.out.print("Masukkan jumlah mata kuliah: ");
+        int jumlahMK = sc.nextInt();
+        sc.nextLine();
 
-        int sksP = 2, sksKTI = 2, sksCTPS = 2, sksMTK = 2;
-        int sksING = 2, sksDP = 2, sksPDP = 3, sksK3 = 2;
+        String[] namaMK = new String[jumlahMK];
+        int[] sks = new int[jumlahMK];
+        double[] nilaiAngka = new double[jumlahMK];
+        String[] nilaiHuruf = new String[jumlahMK];
+        double[] bobotNilai = new double[jumlahMK];
 
-        double bP = konversiBobot(pancasila);
-        double bKTI = konversiBobot(kti);
-        double bCTPS = konversiBobot(ctps);
-        double bMTK = konversiBobot(mtk);
-        double bING = konversiBobot(ing);
-        double bDP = konversiBobot(daspro);
-        double bPDP = konversiBobot(prakdaspro);
-        double bK3 = konversiBobot(k3);
+        for (int i = 0; i < jumlahMK; i++) {
+            System.out.println("\nData Mata Kuliah ke-" + (i + 1));
+            System.out.print("Nama Mata Kuliah: ");
+            namaMK[i] = sc.nextLine();
+            System.out.print("Bobot SKS: ");
+            sks[i] = sc.nextInt();
+            System.out.print("Nilai Angka: ");
+            nilaiAngka[i] = sc.nextDouble();
+            sc.nextLine();
 
-        String hP = konversiHuruf(pancasila);
-        String hKTI = konversiHuruf(kti);
-        String hCTPS = konversiHuruf(ctps);
-        String hMTK = konversiHuruf(mtk);
-        String hING = konversiHuruf(ing);
-        String hDP = konversiHuruf(daspro);
-        String hPDP = konversiHuruf(prakdaspro);
-        String hK3 = konversiHuruf(k3);
+            nilaiHuruf[i] = konversiHuruf(nilaiAngka[i]);
+            bobotNilai[i] = konversiBobot(nilaiAngka[i]);
+        }
 
         System.out.println("\n============================");
         System.out.println(" Hasil Konversi Nilai");
         System.out.println("============================");
-        System.out.printf("%-35s %-12s %-12s %-12s\n",
-                "MK", "Nilai Angka", "Nilai Huruf", "Bobot Nilai");
+        System.out.printf("%-35s %-12s %-12s %-12s\n", "MK", "Nilai Angka", "Nilai Huruf", "Bobot Nilai");
 
-        System.out.printf("%-35s %-12.2f %-12s %-12.2f\n",
-                "Pancasila", pancasila, hP, bP);
-        System.out.printf("%-35s %-12.2f %-12s %-12.2f\n",
-                "Konsep Teknologi Informasi", kti, hKTI, bKTI);
-        System.out.printf("%-35s %-12.2f %-12s %-12.2f\n",
-                "Critical Thinking dan Problem Solving", ctps, hCTPS, bCTPS);
-        System.out.printf("%-35s %-12.2f %-12s %-12.2f\n",
-                "Matematika Dasar", mtk, hMTK, bMTK);
-        System.out.printf("%-35s %-12.2f %-12s %-12.2f\n",
-                "Bahasa Inggris", ing, hING, bING);
-        System.out.printf("%-35s %-12.2f %-12s %-12.2f\n",
-                "Dasar Pemrograman", daspro, hDP, bDP);
-        System.out.printf("%-35s %-12.2f %-12s %-12.2f\n",
-                "Praktikum Dasar Pemrograman", prakdaspro, hPDP, bPDP);
-        System.out.printf("%-35s %-12.2f %-12s %-12.2f\n",
-                "Keselamatan dan Kesehatan Kerja", k3, hK3, bK3);
-        double totalBobot =
-                bP * sksP + bKTI * sksKTI + bCTPS * sksCTPS + bMTK * sksMTK +
-                bING * sksING + bDP * sksDP + bPDP * sksPDP + bK3 * sksK3;
+        double totalBobotXSkS = 0;
+        int totalSKS = 0;
 
-        int totalSKS = sksP + sksKTI + sksCTPS + sksMTK +
-                       sksING + sksDP + sksPDP + sksK3;
+        for (int i = 0; i < jumlahMK; i++) {
+            System.out.printf("%-35s %-12.2f %-12s %-12.2f\n", 
+                               namaMK[i], nilaiAngka[i], nilaiHuruf[i], bobotNilai[i]);
+            
+            totalBobotXSkS += (bobotNilai[i] * sks[i]);
+            totalSKS += sks[i];
+        }
 
-        double ip = totalBobot / totalSKS;
+        double ip = totalBobotXSkS / totalSKS;
 
         System.out.println("============================");
-        System.out.printf("IP : %.2f\n", ip);
+        System.out.printf("IP Semester : %.2f\n", ip);
         System.out.println("============================");
-
-        sc.close();
     }
+
     public static String konversiHuruf(double nilai) {
         if (nilai > 80) return "A";
         else if (nilai > 73) return "B+";
@@ -93,6 +65,7 @@ public class array11 {
         else if (nilai > 39) return "D";
         else return "E";
     }
+
     public static double konversiBobot(double nilai) {
         if (nilai > 80) return 4.0;
         else if (nilai > 73) return 3.5;
