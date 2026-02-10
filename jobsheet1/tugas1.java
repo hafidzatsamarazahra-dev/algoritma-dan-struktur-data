@@ -19,7 +19,7 @@ public class tugas1 {
         };
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Masukkan Kode Plat1: ");
+        System.out.print("Masukkan Kode Plat: ");
         char inputKode = input.next().toUpperCase().charAt(0);
 
         boolean ditemukan = false;
