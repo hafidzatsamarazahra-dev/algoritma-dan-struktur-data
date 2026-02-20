@@ -9,6 +9,7 @@ public class perulangan11 {
         String nim = input.nextLine();
 
         int n = Integer.parseInt(nim.substring(nim.length() - 2));
+        System.out.println("nilai N:" + n);
 
         if (n < 10) {
             n += 10;
