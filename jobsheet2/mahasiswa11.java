@@ -44,7 +44,7 @@ public class mahasiswa11 {
         mhs.nim = "254107020034";
         mhs.kelas = "TI-1G";
 
-        mhs.updateIpk(3.7);
+        mhs.updateIpk(5);
 
         mhs.tampilkanInformasi();
         System.out.println("Nilai Kinerja: " + mhs.nilaiKinerja(mhs.ipk));
