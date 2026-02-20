@@ -9,7 +9,7 @@ public class mahasiswa11 {
     void tampilkanInformasi() {
         System.out.println("Nama: " + nama);
         System.out.println("NIM: " + nim);
-        System.out.println("IPK: " + ipk);
+        System.out.println("Ipk: " + ipk);
         System.out.println("Kelas: " + kelas);
     }
 
@@ -21,7 +21,7 @@ public class mahasiswa11 {
         if (ipkBaru >= 0.0 && ipkBaru <= 4.0) {
             ipk = ipkBaru;
         } else {
-            System.out.println("IPK tidak valid. Harus antara 0.0 dan 4.0");
+            System.out.println("Ipk tidak valid. Harus antara 0.0 dan 4.0");
         }
     }
 
