@@ -6,6 +6,9 @@ public class mahasiswa11 {
     String kelas;
     double ipk;
 
+    public mahasiswa11() {
+    }
+
     public mahasiswa11(String nm, String nim, double ipk, String kls) {
         nama = nm;
         this.nim = nim;
