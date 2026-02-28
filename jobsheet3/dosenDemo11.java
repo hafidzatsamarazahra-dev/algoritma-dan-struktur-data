@@ -32,11 +32,18 @@ public class dosenDemo11 {
             arrayOfDosen[i] = new dosen11(kode, nama, jenisKelamin, usia);
         }
 
-        System.out.println("\n===== DATA SEMUA DOSEN =====");
-        for (dosen11 d : arrayOfDosen) {
-            d.tampilData();
-        }
+        dataDosen11 data = new dataDosen11();
 
-        sc.close();
+        System.out.println("\n===== DATA SEMUA DOSEN =====");
+        data.dataSemuaDosen(arrayOfDosen);
+
+        System.out.println("\n===== JUMLAH DOSEN PER JENIS KELAMIN =====");
+        data.jumlahDosenPerJenisKelamin(arrayOfDosen);
+
+        System.out.println("\n===== RERATA USIA DOSEN PER JENIS KELAMIN =====");
+        data.rerataUsiaDosenPerJenisKelamin(arrayOfDosen);
+
+        data.infoDosenPalingTua(arrayOfDosen);
+        data.infoDosenPalingMuda(arrayOfDosen);
     }
 }
