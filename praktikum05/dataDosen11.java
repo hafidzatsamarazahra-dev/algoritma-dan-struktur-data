@@ -44,4 +44,15 @@ public class dataDosen11 {
             dataDosen[i] = tmp;
         }
     }
+     void insertionSort(){
+        for(int i = 1; i < idx; i++){
+            dosen11 temp = dataDosen[i];
+            int j = i;
+            while(j > 0 && dataDosen[j-1].usia > temp.usia){
+                dataDosen[j] = dataDosen[j-1];
+                j--;
+            }
+            dataDosen[j] = temp;
+        }
+    }
 }

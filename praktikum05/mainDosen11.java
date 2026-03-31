@@ -14,6 +14,7 @@ public class mainDosen11 {
             System.out.println("2. Tampil Data");
             System.out.println("3. Sorting ASC (Usia termuda ke tertua)");
             System.out.println("4. Sorting DSC (Usia tertua ke termuda)");
+            System.out.println("5. Insertion Sort (ASC)");
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
             pilih = sc.nextInt();
@@ -52,6 +53,11 @@ public class mainDosen11 {
                     System.out.println("Data berhasil diurutkan DSC");
                     break;
 
+                case 5:
+                    list.insertionSort();
+                    System.out.println("Data berhasil diurutkan dengan Insertion Sort (ASC)");
+                    list.tampil();
+                    break;
                 case 0:
                     System.out.println("Terima kasih!");
                     break;
