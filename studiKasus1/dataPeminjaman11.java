@@ -15,16 +15,16 @@ public class dataPeminjaman11 {
         }
     }
 
-    void sortingDSC(){
+    void sortingASC(){
         for(int i = 0; i < idx-1; i++){
-            int max = i;
+            int min = i;
             for(int j = i+1; j < idx; j++){
-                if(dataPeminjaman[j].denda > dataPeminjaman[max].denda){
-                    max = j;
+                if(dataPeminjaman[j].mhs.nim.compareTo(dataPeminjaman[min].mhs.nim) < 0){
+                    min = j;
                 }
             }
-            peminjaman11 tmp = dataPeminjaman[max];
-            dataPeminjaman[max] = dataPeminjaman[i];
+            peminjaman11 tmp = dataPeminjaman[min];
+            dataPeminjaman[min] = dataPeminjaman[i];
             dataPeminjaman[i] = tmp;
         }
     }

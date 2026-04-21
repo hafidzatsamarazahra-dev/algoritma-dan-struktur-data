@@ -28,7 +28,7 @@ public class mainPeminjaman11 {
             System.out.println("1. Tampilkan Mahasiswa");
             System.out.println("2. Tampilkan Buku");
             System.out.println("3. Tampilkan Peminjaman");
-            System.out.println("4. Urutkan berdasarkan denda (DESC)");
+            System.out.println("4. Urutkan berdasarkan NIM (ASC)");
             System.out.println("5. Cari berdasarkan NIM");
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
@@ -69,17 +69,19 @@ public class mainPeminjaman11 {
                     break;
 
                 case 4:
-                    for(int i = 0; i < list.idx; i++){
-                        list.dataPeminjaman[i].hitungDenda();
-                    }
+                    // for(int i = 0; i < list.idx; i++){
+                    //     list.dataPeminjaman[i].hitungDenda();
+                    // }
 
-                    list.sortingDSC();
+                    list.sortingASC();
 
-                    System.out.println("\n=== DATA PEMINJAMAN (URUT DENDA TERBESAR) ===");
+                    System.out.println("\n=== DATA PEMINJAMAN (URUT NIM) ===");
                     for(int i = 0; i < list.idx; i++){
-                        list.dataPeminjaman[i].tampilPeminjaman();
+                        list.dataPeminjaman[i].mhs.tampilMhs();
+                        System.out.println();
                     }
                     break;
+
 
                 case 5:
                     System.out.print("Masukkan NIM: ");
