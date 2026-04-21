@@ -51,9 +51,23 @@ public class stackTugasMahasiswa11 {
         }
     }
     public void print(){
-        for(int i=0;i<=top;i++){
-            System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
-        }
-        System.out.println("");
+        // for(int i=0;i<=top;i++){
+        //     System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
+        // }
+        // System.out.println("");
+        for(int i=top;i>=0;i--){
+        System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
+    }
+    }
+    public mahasiswa11 peekBottom(){
+    if (!isEmpty()){
+        return stack[0];
+    } else {
+        System.out.println("Stack kosong");
+        return null;
+    }
+    }
+    public int count(){
+    return top + 1;
     }
 }
