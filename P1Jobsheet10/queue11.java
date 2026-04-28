@@ -42,6 +42,7 @@ public class queue11 {
     public void print(){
         if (IsEmpty()){
             System.out.println("queue masih kosong");
+            System.exit(0);
         }else{
             int i = front;
             while ( i!=rear){
@@ -66,6 +67,7 @@ public class queue11 {
     public void Enqueue(int dt) {
     if (IsFull()) {
         System.out.println("Queue sudah penuh");
+        System.exit(0);
     } else {
         if (IsEmpty()) {
             front = rear = 0;
@@ -101,5 +103,5 @@ public class queue11 {
     return dt;
     }
 
-    
+
 }
