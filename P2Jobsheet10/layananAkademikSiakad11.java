@@ -14,6 +14,7 @@ public class layananAkademikSiakad11 {
             System.out.println("3. Lihat Mahasiswa Terdepan");
             System.out.println("4. Lihat Semua Antrian");
             System.out.println("5. Jumlah mahasiswa dalam antrian");
+            System.out.println("6. Cek Antrian paling belakang");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
 
@@ -53,6 +54,9 @@ public class layananAkademikSiakad11 {
 
                 case 5:
                     System.out.println("Jumlah dalam antrian: " + antrian.getJumlahAntrian());
+                    break;
+                case 6: 
+                    antrian.lihatAkhir();
                     break;
                 case 0:
                     System.out.println("terima kasih.");
