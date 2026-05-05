@@ -31,6 +31,18 @@ public class SLLMain11 {
 
         System.out.println("\nData Linked List:");
         sll.print();
+
+        System.out.println("data index 1 : ");
+        sll.getData(1);
+
+        System.out.println("data mahasiswa an Bimon berada pada index : "+sll.indexOf("Bimon"));
+        System.out.println();
+
+        sll.removeFirst();
+        sll.removeLast();
+        sll.print();
+        sll.removeAt(0);
+        sll.print();
     }
         // mahasiswa11 mhs1 = new mahasiswa11("24212200","Alvaro","1A",4.0);
         // mahasiswa11 mhs2 = new mahasiswa11("23212201","Bimon","2B",3.8);
