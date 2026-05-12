@@ -20,6 +20,7 @@ public class doubleLinkedListMain11 {
             System.out.println("4. Hapus data di awal");
             System.out.println("5. Hapus data di akhir");
             System.out.println("6. Tampilkan data");
+            System.out.println("7. Tampilkan data reverse");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu : ");
 
@@ -60,6 +61,10 @@ public class doubleLinkedListMain11 {
                     list.print();
                     break;
 
+                case 7:
+                    list.printReverse();
+                    break;
+                    
                 case 0:
                     System.out.println("Program selesai.");
                     break;

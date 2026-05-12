@@ -97,4 +97,17 @@ public class doubleLinkedList11 {
 
         System.out.println("Data akhir berhasil dihapus.");
     }
+    public void printReverse() {
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
+
+        node11 current = tail;
+
+        while (current != null) {
+            current.data.tampil();
+            current = current.prev;
+        }
+    }
 }
