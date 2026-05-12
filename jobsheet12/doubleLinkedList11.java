@@ -79,20 +79,25 @@ public class doubleLinkedList11 {
             return;
         }
 
+        mahasiswa11 dataHapus = head.data;
+
         if (head == tail) {
             head = tail = null;
         } else {
             head = head.next;
             head.prev = null;
         }
-        System.out.println("data berhasil dihapus");
-    }
 
-    public void removeLast() {
+        System.out.println("Data yang dihapus:");
+        dataHapus.tampil();
+    }
+   public void removeLast() {
         if (isEmpty()) {
             System.out.println("Linked List kosong.");
             return;
         }
+
+        mahasiswa11 dataHapus = tail.data;
 
         if (head == tail) {
             head = tail = null;
@@ -100,7 +105,9 @@ public class doubleLinkedList11 {
             tail = tail.prev;
             tail.next = null;
         }
-        System.out.println("data berhasil dihapus");
+
+        System.out.println("Data yang dihapus:");
+        dataHapus.tampil();
     }
 
     public void printReverse() {
