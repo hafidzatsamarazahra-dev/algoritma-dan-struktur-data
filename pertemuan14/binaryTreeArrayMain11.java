@@ -18,5 +18,9 @@ public class binaryTreeArrayMain11 {
     bta.populateData(dataMahasiswa,idxLast);
     System.out.println("\nInOrder traversal mahasiswa: ");
     bta.traverseInOrder(0);
+
+    System.out.println();
+    System.out.println("PreOrder traversal mahasiswa:");
+    bta.traversePreOrder(0);
     }
 }
