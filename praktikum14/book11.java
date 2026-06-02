@@ -14,6 +14,6 @@ public class book11 {
     }
 
     public String toString(){
-        return "ISBN: " + this.isbn + "Title: " + this.title;
+        return "ISBN: " + this.isbn + " Title: " + this.title;
     }
 }
