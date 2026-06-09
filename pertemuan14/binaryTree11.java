@@ -225,4 +225,54 @@ public class binaryTree11 {
             tampilMahasiswaIPKdiAtas(node.right, ipkBatas);
         }
     }
+     public void cariNama(String nama){
+        cariNama(root, nama);
+    }
+
+    private void cariNama(node11 node, String nama){
+        if(node != null){
+            cariNama(node.left, nama);
+
+            if(node.mahasiswa.nama.equalsIgnoreCase(nama)){
+                node.mahasiswa.tampilInformasi();
+            }
+
+            cariNama(node.right, nama);
+        }
+    }
+
+    public void tigaIPKTertinggi(){
+        int[] jumlah = {0};
+        tigaIPKTertinggi(root, jumlah);
+    }
+
+    private void tigaIPKTertinggi(node11 node, int[] jumlah){
+        if(node != null && jumlah[0] < 3){
+            tigaIPKTertinggi(node.right, jumlah);
+
+            if(jumlah[0] < 3){
+                node.mahasiswa.tampilInformasi();
+                jumlah[0]++;
+            }
+
+            tigaIPKTertinggi(node.left, jumlah);
+        }
+    }
+
+
+    public void tampilKelas(String kelas){
+        tampilKelas(root, kelas);
+    }
+
+    private void tampilKelas(node11 node, String kelas){
+        if(node != null){
+            tampilKelas(node.left, kelas);
+
+            if(node.mahasiswa.kelas.equalsIgnoreCase(kelas)){
+                node.mahasiswa.tampilInformasi();
+            }
+
+            tampilKelas(node.right, kelas);
+        }
+    }
 }
